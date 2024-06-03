@@ -4,7 +4,7 @@ import view.AnimalView;
 
 public class Animal {
 
-	private static float[] metrosCuadradosNecesarios = {1f, 1.2f, 0.9f, 1.15f};
+	private static float[] metrosCuadradosNecesarios = {1f, 1.2f, 0.9f, 1.15f, 2.3f};
 	private int codigo;
 	private String raza;
 	private float precio;

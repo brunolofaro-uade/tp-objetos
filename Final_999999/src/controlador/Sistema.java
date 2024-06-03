@@ -11,6 +11,7 @@ import excepciones.AnimalNoExisteException;
 import excepciones.ClienteNotFoundException;
 import excepciones.PasturaNotFoundException;
 import negocio.Animal;
+import negocio.Campo;
 import negocio.Cliente;
 import negocio.Pastura;
 import view.AnimalView;
@@ -141,7 +142,9 @@ public class Sistema {
 		pastura = new Pastura(4, "Centeno", 366.00f); pasturas.add(pastura);
 		Cliente cliente;
 		cliente = new Cliente("Cuit:12-3456789-1", "Nombre_I"); clientes.add(cliente);
-		cliente = new Cliente("Cuit:22-3456789-2", "Nombre_II"); clientes.add(cliente);
+		cliente = new Cliente("Cuit:22-3456789-2", "Nombre_II"); 
+		cliente.addCampo(1, 10, pastura, animal);
+		clientes.add(cliente);
 		cliente = new Cliente("Cuit:32-3456789-3", "Nombre_III"); clientes.add(cliente);
 		cliente = new Cliente("Cuit:42-3456789-4", "Nombre_IV"); clientes.add(cliente);
 		cliente = new Cliente("Cuit:52-3456789-5", "Nombre_V"); clientes.add(cliente);

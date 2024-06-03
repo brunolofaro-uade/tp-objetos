@@ -6,15 +6,11 @@ import excepciones.ClienteNotFoundException;
 import excepciones.PasturaNotFoundException;
 import gui.InterfazPrincipal;
 import javax.swing.JFrame;
+import view.ClienteViewModel;
 
 public class Test {
 
 	public static void main(String[] args) {
-		InterfazPrincipal gui = new InterfazPrincipal();
-		gui.setVisible(true);
-		gui.setSize(400,250);
-		gui.setLocationRelativeTo(null);
-		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// TODO Auto-generated method stub
 		Sistema s = Sistema.getInstance();
 		try {
@@ -29,6 +25,14 @@ public class Test {
 			//System.out.println("Campos agregados a los clientes");
 			//System.out.println("Cantidad de Cabezas cliente Cuit:12-3456789-1 " + s.obtenerCabezasPorCliente("Cuit:12-3456789-1", 5));
 			//System.out.println("Valor de Hacienda del cliente Cuit:62-3456789-6 " + s.obtenerValorHaciendaPorCliente("Cuit:62-3456789-6"));
+			
+			ClienteViewModel cvm = new ClienteViewModel(s.obtenerClientes());
+			
+			InterfazPrincipal gui = new InterfazPrincipal(cvm);
+			gui.setVisible(true);
+			gui.setSize(400,250);
+			gui.setLocationRelativeTo(null);
+			gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
 		} catch (ClienteNotFoundException e) {
 			e.printStackTrace();
